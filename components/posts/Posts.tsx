@@ -82,6 +82,8 @@ export const Posts = ({ storyType }: { storyType: StoryType }) => {
       }}
       contentContainerStyle={{ flexGrow: 1 }}
       renderItem={renderItem}
+      testID="posts-list"
+      accessibilityRole="list"
       ListFooterComponent={() => {
         if (!isLoading) return null;
 
@@ -92,6 +94,7 @@ export const Posts = ({ storyType }: { storyType: StoryType }) => {
               justifyContent: "center",
               marginVertical: 15,
             }}
+            testID="loading-footer"
           >
             <Spinner variant="dark" />
           </View>

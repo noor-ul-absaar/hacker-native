@@ -4,8 +4,9 @@ import { Animated, Easing } from "react-native";
 
 type Props = {
   variant: "dark" | "light";
+  testID?: string;
 };
-export const Spinner = ({ variant }: Props) => {
+export const Spinner = ({ variant, testID = "activity-indicator" }: Props) => {
   const rotateAnimation = new Animated.Value(0);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export const Spinner = ({ variant }: Props) => {
       style={{
         transform: [{ rotate }],
       }}
+      testID={testID}
     >
       <Loader width={24} color={variant === "dark" ? "#000" : "#fff"} />
     </Animated.View>

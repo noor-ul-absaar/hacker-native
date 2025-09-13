@@ -61,6 +61,8 @@ export const Comments = ({ id, kids, children }: Props) => {
       }}
       contentContainerStyle={{ flexGrow: 1 }}
       renderItem={renderItem}
+      testID="comments-list"
+      accessibilityRole="list"
       ListFooterComponent={() => {
         if (!isLoading) return <View style={{ height: bottom }} />;
 
@@ -71,6 +73,7 @@ export const Comments = ({ id, kids, children }: Props) => {
               justifyContent: "center",
               marginVertical: 15,
             }}
+            testID="loading-footer"
           >
             <Spinner variant="dark" />
           </View>
